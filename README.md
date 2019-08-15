@@ -154,25 +154,25 @@ pip install psycopg2``
 
 ### Set up and enable a virtual host
 * Create /etc/apache2/sites-available/catalog.conf and add the following lines to configure the virtual host:
-``<VirtualHost *:80><br/>
-    ServerName 34.220.136.95<br/>
-    WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv/lib/python2.7/site-packages<br/>
-    WSGIProcessGroup catalog<br/>
-    ServerAlias ec2-34-220-136-95.us-west-2.compute.amazonaws.com<br/>
-    ServerAdmin admin@34.220.136.95<br/>
-    WSGIScriptAlias / /var/www/catalog/catalog.wsgi<br/>
-    <Directory /var/www/catalog/catalog/><br/>
-        Order allow,deny<br/>
-        Allow from all<br/>
-    </Directory><br/>
-    Alias /static /var/www/catalog/catalog/static<br/>
-    <Directory /var/www/catalog/catalog/static/><br/>
-        Order allow,deny<br/>
-        Allow from all<br/>
-    </Directory><br/>
-    ErrorLog ${APACHE_LOG_DIR}/error.log<br/>
-    LogLevel warn<br/>
-    CustomLog ${APACHE_LOG_DIR}/access.log combined<br/>
+``<VirtualHost *:80><br />
+    ServerName 34.220.136.95<br />
+    WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv/lib/python2.7/site-packages<br />
+    WSGIProcessGroup catalog<br />
+    ServerAlias ec2-34-220-136-95.us-west-2.compute.amazonaws.com<br />
+    ServerAdmin admin@34.220.136.95<br />
+    WSGIScriptAlias / /var/www/catalog/catalog.wsgi<br />
+    <Directory /var/www/catalog/catalog/><br />
+        Order allow,deny<br />
+        Allow from all<br />
+    </Directory><br />
+    Alias /static /var/www/catalog/catalog/static<br />
+    <Directory /var/www/catalog/catalog/static/><br />
+        Order allow,deny<br />
+        Allow from all<br />
+    </Directory><br />
+    ErrorLog ${APACHE_LOG_DIR}/error.log<br />
+    LogLevel warn<br />
+    CustomLog ${APACHE_LOG_DIR}/access.log combined<br />
 </VirtualHost> ``
 
 * Enable virtual host: ``sudo a2ensite catalog``. The following prompt will be returned:
