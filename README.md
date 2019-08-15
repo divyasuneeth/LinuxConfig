@@ -154,7 +154,7 @@ pip install psycopg2``
 
 ### Set up and enable a virtual host
 * Create /etc/apache2/sites-available/catalog.conf and add the following lines to configure the virtual host:
-`` `<VirtualHost *:80>
+<VirtualHost \*:80>
     ServerName 34.220.136.95
     WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv/lib/python2.7/site-packages
     WSGIProcessGroup catalog
@@ -173,7 +173,7 @@ pip install psycopg2``
     ErrorLog ${APACHE_LOG_DIR}/error.log
     LogLevel warn
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost> `` `
+</VirtualHost>
 
 * Enable virtual host: ``sudo a2ensite catalog``. The following prompt will be returned:
 
