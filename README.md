@@ -101,13 +101,8 @@ On the local machine, run: ``ssh -i ~/.ssh/myLinuxProject -p 2200 grader@34.220.
 * Start the web server with sudo service apache2 start
 * Install and configure PostgreSQL
   * While logged in as grader, install PostgreSQL: ``sudo apt-get install postgresql``.
-* PostgreSQL should not allow remote connections. In the ``cat /etc/postgresql/9.5/main/pg_hba.conf `` file, you should see:
-TYPE  | DATABASE     |   USER       |     ADDRESS           |      METHOD
----     
-local |  all         |   postgres   |                       |       peer   
-local |  all         |    all       |                       |        peer
-host  |  all         |    all       |      127.0.0.1/32     |       md5
-host  |  all         |    all       |      ::1/128          |       md5
+* PostgreSQL should not allow remote connections. In the ``cat /etc/postgresql/9.5/main/pg_hba.conf ``
+
 * Switch to the postgres user: sudo su - postgres.
 * Open PostgreSQL interactive terminal with psql.
 * Create the catalog user with a password and give them the ability to create databases:
