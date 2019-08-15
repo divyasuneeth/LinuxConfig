@@ -32,7 +32,7 @@ In this project, you will take a baseline installation of a Linux server and pre
   * Run ```sudo nano /etc/ssh/sshd_config```
   * Confirm by running ```ssh -i ~/.ssh/LightsailKey.pem -p 2200 ubuntu@34.220.136.95```
 * Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).
-* ``sudo ufw status ``
+  * ``sudo ufw status ``
   * ``sudo ufw default deny incoming``
   * ``sudo ufw default allow outgoing``
   * ``sudo ufw allow 2200/tcp``
@@ -42,7 +42,7 @@ In this project, you will take a baseline installation of a Linux server and pre
   * ``sudo ufw enable ``
 * Exit the SSH connection
 * Click on the Manage option of the Amazon Lightsail Instance, navigate to the Networking tab, and then change the firewall configuration to match the internal firewall settings above.
-* From your local terminal, run: ssh -i ~/.ssh/LightsailKey.pem -p 2200 ubuntu@34.220.136.95
+* From your local terminal, run: ``ssh -i ~/.ssh/LightsailKey.pem -p 2200 ubuntu@34.220.136.95``
 
 # Give grader access.
 
@@ -69,18 +69,17 @@ grader  ALL=(ALL:ALL) ALL``
 * Run ssh-keygen
 * Enter the file name for the key(i named it myLinuxProject) in the local directory ~/.ssh
 * Enter in a passphrase(optional) twice. Two files will be created ( ~/.ssh/myLinuxProject and ~/.ssh/myLinuxProject.pub)
-* Run cat ~/.ssh/myLinuxProject.pub and copy the contents of the file
+* Run ``cat ~/.ssh/myLinuxProject.pub`` and copy the contents of the file
 * Log in to the grader's virtual machine
    * ``ssh -i ~/.ssh/myLinuxProject -p 2200 grader@34.220.136.95``
 * On the grader's virtual machine:
 * Create a new directory called ~/.ssh (mkdir .ssh)
-* Run sudo nano ~/.ssh/authorized_keys and paste the previously copied content (myLinuxProject.pub)into this file, save and exit.
+* Run ``sudo nano ~/.ssh/authorized_keys ``and paste the previously copied content (myLinuxProject.pub)into this file, save and exit.
 * change owner and group of authorized_keys
-  * sudo chgrp grader authorized_keys
-  * sudo chown grader authorized_keys
-* Give the permissions: chmod 700 .ssh and chmod 644 .ssh/authorized_keys
-* Check in /etc/ssh/sshd_config file if PasswordAuthentication is set to no
-``cat /etc/ssh/sshd_config``
+  * `` sudo chgrp grader authorized_keys``
+  * ``sudo chown grader authorized_keys``
+* Give the permissions: ``chmod 700 .ssh ``and ``chmod 644 .ssh/authorized_keys``
+* Check in ``cat /etc/ssh/sshd_config `` file if PasswordAuthentication is set to no
 * Restart SSH: sudo service ssh restart
 
 On the local machine, run: ``ssh -i ~/.ssh/myLinuxProject -p 2200 grader@34.220.136.95``
@@ -102,9 +101,10 @@ On the local machine, run: ``ssh -i ~/.ssh/myLinuxProject -p 2200 grader@34.220.
 * Start the web server with sudo service apache2 start
 * Install and configure PostgreSQL
   * While logged in as grader, install PostgreSQL: ``sudo apt-get install postgresql``.
-* PostgreSQL should not allow remote connections. In the /etc/postgresql/9.5/main/pg_hba.conf file, you should see:
-
-local   all             postgres                                peer
+* PostgreSQL should not allow remote connections. In the ``cat /etc/postgresql/9.5/main/pg_hba.conf `` file, you should see:
+TYPE | DATABASE     |   USER       |     ADDRESS           |      METHOD
+-----  ------------    --------          ----------                ------
+local   all            postgres                                 peer   
 local   all             all                                     peer
 host    all             all             127.0.0.1/32            md5
 host    all             all             ::1/128                 md5
