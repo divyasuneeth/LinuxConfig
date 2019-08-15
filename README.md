@@ -21,8 +21,8 @@ In this project, you will take a baseline installation of a Linux server and pre
 
 * From the Account menu on Amazon Lightsail, click on SSH keys tab and download the Default Private Key.
 * Move this private key file named LightsailDefaultPrivateKey-.pem into the local folder ~/.ssh and rename it LightsailKey.pem.
-* In your terminal, type: chmod 600 ~/.ssh/LightsailKey.pem.
-* To connect to the instance via the terminal: ssh -i ~/.ssh/LightsailKey.pem ubuntu@34.220.136.95, where 34.220.136.95 is the public IP address of the instance.
+* In your terminal, type: ``chmod 600 ~/.ssh/LightsailKey.pem``.
+* To connect to the instance via the terminal: ``ssh -i ~/.ssh/LightsailKey.pem ubuntu@34.220.136.95``, where 34.220.136.95 is the public IP address of the instance.
 
 # Secure your server.
 * Update all currently installed packages.
@@ -32,7 +32,7 @@ In this project, you will take a baseline installation of a Linux server and pre
   * Run ```sudo nano /etc/ssh/sshd_config```
   * Confirm by running ```ssh -i ~/.ssh/LightsailKey.pem -p 2200 ubuntu@34.220.136.95```
 * Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).
-``* sudo ufw status  
+* ``sudo ufw status  
   * sudo ufw default deny incoming
   * sudo ufw default allow outgoing
   * sudo ufw allow 2200/tcp
@@ -219,7 +219,7 @@ To activate the new configuration, you need to run:
 * Styling was lost after deploying the project on to the server.
   * solved by disabling the default apache site
   * Disable the default Apache site
-    `` sudo a2dissite 000-default.conf``. 
+    `` sudo a2dissite 000-default.conf``.
 
-To check error.log
+### To check error.log
 sudo tail /var/log/apache2/error.log
