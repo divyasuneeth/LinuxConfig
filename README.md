@@ -189,7 +189,7 @@ To activate the new configuration, you need to run:
 
 ### Set up the Flask application
 
-* Create /var/www/catalog/catalog.wsgi file add the following lines:
+* Create ``sudo nano /var/www/catalog/catalog.wsgi`` file add the following lines:
 
 
 ```import sys
