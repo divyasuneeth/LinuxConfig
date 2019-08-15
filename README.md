@@ -32,14 +32,14 @@ In this project, you will take a baseline installation of a Linux server and pre
   * Run ```sudo nano /etc/ssh/sshd_config```
   * Confirm by running ```ssh -i ~/.ssh/LightsailKey.pem -p 2200 ubuntu@34.220.136.95```
 * Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).
-* ``sudo ufw status  
-  * sudo ufw default deny incoming
-  * sudo ufw default allow outgoing
-  * sudo ufw allow 2200/tcp
-  * sudo ufw allow www  
-  * sudo ufw allow 123/udp
-  * sudo ufw deny 22  
-  * sudo ufw enable ``
+* ``sudo ufw status ``
+  * ``sudo ufw default deny incoming``
+  * ``sudo ufw default allow outgoing``
+  * ``sudo ufw allow 2200/tcp``
+  * ``sudo ufw allow www ``
+  * ``sudo ufw allow 123/udp``
+  * ``sudo ufw deny 22  ``
+  * ``sudo ufw enable ``
 * Exit the SSH connection
 * Click on the Manage option of the Amazon Lightsail Instance, navigate to the Networking tab, and then change the firewall configuration to match the internal firewall settings above.
 * From your local terminal, run: ssh -i ~/.ssh/LightsailKey.pem -p 2200 ubuntu@34.220.136.95
