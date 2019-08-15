@@ -130,10 +130,10 @@ sudo chgrp grader catalog``.
 
 * In __init__.py, replace line:
 
-``app.run(host="0.0.0.0", port=8000, debug=True)`` to ``app.run()``
+``app.run(host='0.0.0.0', port=8000, threaded=False)`` to ``app.run()``
 * In database_setup.py, replace line :
 
-``engine = create_engine("sqlite:///catalog.db")`` to
+``engine = create_engine("sqlite:///categorywithusers.db")`` to
 ``engine = create_engine('postgresql://catalog:password@localhost/catalog')``
 
 ### Install the virtual environment and dependencies
