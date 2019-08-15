@@ -46,14 +46,14 @@ In this project, you will take a baseline installation of a Linux server and pre
 
 # Give grader access.
 
-###Create a new user account named grader
+### Create a new user account named grader
 
 While logged in as ubuntu, add user: ``sudo adduser grader``.
 Enter a password (twice) and fill out information for this new user.
 
 ### Give grader the permission to sudo
 
-* Edits the sudoers file: sudo visudo.
+* Edits the sudoers file: ``sudo visudo``.
 * Search for the line that looks like this:
 
 ``root    ALL=(ALL:ALL) ALL``
@@ -202,22 +202,24 @@ sys.path.insert(0, "/var/www/catalog/")
 from catalog import app as application
 application.secret_key = 'supersecretkey'
 ```
-###Restart Apache
 
-* Restart Apache: ``sudo service apache2 restart``.
-
-
-
-
-
-### Disable the default Apache site
-
-Disable the default Apache site:`` sudo a2dissite 000-default.conf``. The following prompt will be returned:
-
-Site 000-default disabled.
+### Disable the default Apache site:
+* `` sudo a2dissite 000-default.conf``.
+The following prompt will be returned:
+``Site 000-default disabled.
 To activate the new configuration, you need to run:
-  service apache2 reload
-Reload Apache: sudo service apache2 reload.
+  service apache2 reload``
+
+# View the Application
+* Restart Apache: ``sudo service apache2 restart``.
+* Open your browser to http://34.220.136.95 or http://ec2-34-220-136-95.us-west-2.compute.amazonaws.com
+
+# Issues Encountered
+* password authentication failed : this error was since catalog db user had a different password.
+* Styling was lost after deploying the project on to the server.
+  * solved by disabling the default apache site
+  * Disable the default Apache site
+    `` sudo a2dissite 000-default.conf``. 
 
 To check error.log
 sudo tail /var/log/apache2/error.log
