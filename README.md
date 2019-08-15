@@ -126,9 +126,9 @@ git clone https://github.com/divyasuneeth/CatalogAPI.git catalog
 * From the /var/www directory, change the ownership and group of the catalog directory to grader using: ``sudo chown grader catalog
 sudo chgrp grader catalog``.
 * Change to the /var/www/catalog/catalog directory.
-* Rename the application.py file to __init__.py using: ``mv application.py __init__.py``.
+* Rename the application.py file to \__init__.py using: ``mv application.py __init__.py``.
 
-* In __init__.py, replace line:
+* In \__init__.py, replace line:
 
 ``app.run(host='0.0.0.0', port=8000, threaded=False)`` to ``app.run()``
 * In database_setup.py, replace line :
