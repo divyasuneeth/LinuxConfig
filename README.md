@@ -212,18 +212,28 @@ To activate the new configuration, you need to run:
 * Restart Apache: ``sudo service apache2 restart``.
 * Open your browser to http://34.220.136.95 or http://ec2-34-220-136-95.us-west-2.compute.amazonaws.com
 
-# Automatically install updates
+
+# Changes based on review
+
+### Automatically install updates
 The unattended-upgrades package can be used to automatically install important system updates.
 
 * Enable automatic (security) updates: ``sudo apt-get install unattended-upgrades``.
 * ``sudo nano /etc/apt/apt.conf.d/50unattended-upgrades``, uncomment the line ``${distro_id}:${distro_codename}-updates`` and save it.
 * Modify ``sudo nano /etc/apt/apt.conf.d/20auto-upgrades`` file to automatically update:
-``APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Download-Upgradeable-Packages "1";
 APT::Periodic::AutocleanInterval "7";
-APT::Periodic::Unattended-Upgrade "1";``
+APT::Periodic::Unattended-Upgrade "1";
 * Enable: sudo dpkg-reconfigure --priority=low unattended-upgrades.
 * Restart Apache: sudo service apache2 restart.
+
+### Cannot log in as root remotely
+The PermitRootLogin property should be set to ``no`` and be uncommented so a root user cannot be used to manipulate the server.
+* sudo nano /etc/ssh/sshd_config
+change the ``ProhibitRootLogin`` to ``no`` and uncomment and save.
+
+check this by : ``cat /etc/ssh/sshd_config |egrep "PermitRootLogin"``
 
 # Issues Encountered
 * password authentication failed : this error was since catalog db user had a different password.
@@ -237,7 +247,7 @@ sudo tail /var/log/apache2/error.log
 
 # Resources
 
-* [https://www.udacity.com] Udacity
+* https://www.udacity.com
 * Create server with AWS :https://medium.com/@mariasurmenok/creating-a-server-with-amazon-lightsail-11c377cf814c
 * https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
 * Vedio on how to deploy flask project on to Apache : http://fosshelp.blogspot.com/2014/03/how-to-deploy-flask-application-with.html
