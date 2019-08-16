@@ -221,10 +221,10 @@ The unattended-upgrades package can be used to automatically install important s
 * Enable automatic (security) updates: ``sudo apt-get install unattended-upgrades``.
 * ``sudo nano /etc/apt/apt.conf.d/50unattended-upgrades``, uncomment the line ``${distro_id}:${distro_codename}-updates`` and save it.
 * Modify ``sudo nano /etc/apt/apt.conf.d/20auto-upgrades`` file to automatically update:
-APT::Periodic::Update-Package-Lists "1";
-APT::Periodic::Download-Upgradeable-Packages "1";
-APT::Periodic::AutocleanInterval "7";
-APT::Periodic::Unattended-Upgrade "1";
+``APT::Periodic::Update-Package-Lists "1";``
+``APT::Periodic::Download-Upgradeable-Packages "1";``
+``APT::Periodic::AutocleanInterval "7";``
+``APT::Periodic::Unattended-Upgrade "1";``
 * Enable: sudo dpkg-reconfigure --priority=low unattended-upgrades.
 * Restart Apache: sudo service apache2 restart.
 
