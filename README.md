@@ -249,12 +249,13 @@ sudo tail /var/log/apache2/error.log
 
 # Resources
 
-* https://www.udacity.com
-* Create server with AWS :https://medium.com/@mariasurmenok/creating-a-server-with-amazon-lightsail-11c377cf814c
-* https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
-* Vedio on how to deploy flask project on to Apache : http://fosshelp.blogspot.com/2014/03/how-to-deploy-flask-application-with.html
+* [https://www.udacity.com](Udacity)
+* [https://medium.com/@mariasurmenok/creating-a-server-with-amazon-lightsail-11c377cf814c](Create server with AWS)
+* [https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps]DigitalOcean
+* [ http://fosshelp.blogspot.com/2014/03/how-to-deploy-flask-application-with.html](Vedio on how to deploy flask project on to Apache)
 * Udacity Student Hub & Knowledge - to find answers to issues.
-* https://www.howtoforge.com/tutorial/how-to-setup-automatic-security-updates-on-ubuntu-1604/
-* https://help.ubuntu.com/lts/serverguide/automatic-updates.html
-* https://serverfault.com/questions/262751/update-ubuntu-10-04/262773#262773
-* https://www.debian.org/doc/manuals/apt-howto/ch-apt-get.en.html
+* To setup automatic security updates on Ubuntu
+    * <https://www.howtoforge.com/tutorial/how-to-setup-automatic-security-updates-on-ubuntu-1604/>
+    * <https://help.ubuntu.com/lts/serverguide/automatic-updates.html>
+    * <https://serverfault.com/questions/262751/update-ubuntu-10-04/262773#262773>
+    * <https://www.debian.org/doc/manuals/apt-howto/ch-apt-get.en.html>
